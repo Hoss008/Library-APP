@@ -15,25 +15,27 @@
         <p class="title author-column">Author</p>
         <p class="title pages-column">Pages</p>
         <p class="title read-column">Read</p>
-        <p class="title read-button-column">Read</p>
         <p class="title remove-column">Remove</p>
       </div>
     </article>
-    <button class="add-book">Add Book</button>
-    <dialog id="book-dialog">
-      <h2>Add book</h2>
-      <form method="dialog">
-        <label>Name</label>
-        <input type="text" id="book-name" name="book-name" required />
-        <label>Author</label>
-        <input type="text" id="book-author" name="book-author" required />
-        <label>Length (Pages)</label>
-        <input type="number" id="book-pages" name="book-pages" />
-        <label>Read</label>
-        <input type="checkbox" id="book-read" name="book-read" />
-        <button id="add-button" type="submit">Add</button>
-      </form>
-      <button type="button" id="cancel">Cancel</button>
-    </dialog>
+    
+    <article>
+      <button class="add-book">Add Book</button>
+      <dialog id="book-dialog">
+        <h2>Add book</h2>
+        <form method="dialog">
+          <label>Name</label>
+          <input type="text" id="book-name" name="book-name" required />
+          <label>Author</label>
+          <input type="text" id="book-author" name="book-author" required />
+          <label>Length (Pages)</label>
+          <input type="number" id="book-pages" name="book-pages" />
+          <label>Read</label>
+          <input type="checkbox" id="book-read" name="book-read" />
+          <button id="add-button" type="submit">Add</button>
+        </form>
+        <button type="button" id="cancel">Cancel</button>
+      </dialog>
+    </article>
   </body>
 </html>

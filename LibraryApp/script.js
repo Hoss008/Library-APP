@@ -19,9 +19,15 @@ function addBookToLibrary(author, title, pages, read) {
 function displayBook(){
     myLibrary.forEach(element => {
         console.log(element); //loops through the array and displays each book on the page.
+        const bookItem = document.createElement("div")
+        bookItem.dataset.id = element.id;
+        
     });
 }
 
 addBookToLibrary("James Clear","Atomic Habbit",300,"not read yet")
 addBookToLibrary("George Orwell", "1984", 328, true)
 displayBook()
+
+const article = document.querySelector(".add-book")
+// article.dataset.
