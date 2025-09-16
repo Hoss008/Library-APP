@@ -18,7 +18,7 @@ function addBookToLibrary(author, title, pages, read) {
 
 function displayBook(){
     myLibrary.forEach(element => {
-        console.log(element);
+        console.log(element); //loops through the array and displays each book on the page.
     });
 }
 

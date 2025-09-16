@@ -3,34 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Library App</title>
+    <title>Library</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <header>📚 My Library</header>
-
-    <div class="container">
-      <div class="add-book">
-        <input type="text" placeholder="Book Title" />
-        <input type="text" placeholder="Author" />
-        <input type="number" placeholder="Pages" />
-        <button>Add Book</button>
+    <h1>Library App</h1>
+    <article class="books-list">
+      <div class="column-titles">
+        <p class="title name-column">Book Name</p>
+        <p class="title author-column">Author</p>
+        <p class="title pages-column">Pages</p>
+        <p class="title read-column">Read</p>
+        <p class="title read-button-column">Read</p>
+        <p class="title remove-column">Remove</p>
       </div>
-
-      <div class="book-list">
-        <div class="book-card">
-          <div class="book-title">The Hobbit</div>
-          <div class="book-author">by J.R.R. Tolkien</div>
-          <div class="status">Not Read Yet</div>
-        </div>
-
-        <div class="book-card">
-          <div class="book-title">Atomic Habits</div>
-          <div class="book-author">by James Clear</div>
-          <div class="status">Read ✔</div>
-        </div>
-      </div>
-    </div>
-    <script src="script.js"></script>
+    </article>
+    <button class="add-book">Add Book</button>
+    <dialog id="book-dialog">
+      <h2>Add book</h2>
+      <form method="dialog">
+        <label>Name</label>
+        <input type="text" id="book-name" name="book-name" required />
+        <label>Author</label>
+        <input type="text" id="book-author" name="book-author" required />
+        <label>Length (Pages)</label>
+        <input type="number" id="book-pages" name="book-pages" />
+        <label>Read</label>
+        <input type="checkbox" id="book-read" name="book-read" />
+        <button id="add-button" type="submit">Add</button>
+      </form>
+      <button type="button" id="cancel">Cancel</button>
+    </dialog>
   </body>
 </html>
