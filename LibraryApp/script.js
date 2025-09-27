@@ -21,13 +21,35 @@ function displayBook(){
         console.log(element); //loops through the array and displays each book on the page.
         const bookItem = document.createElement("div")
         bookItem.dataset.id = element.id;
-        
     });
 }
 
-addBookToLibrary("James Clear","Atomic Habbit",300,"not read yet")
-addBookToLibrary("George Orwell", "1984", 328, true)
-displayBook()
+// addBookToLibrary("James Clear","Atomic Habbit",300,"not read yet")
+// addBookToLibrary("George Orwell", "1984", 328, true)
+// displayBook()
 
-const article = document.querySelector(".add-book")
-// article.dataset.
+let addBookButton = document.querySelector(".add-book");
+
+addBookButton.addEventListener("click", function () {
+  const form = document.createElement("form");
+  form.innerHTML = `
+   <label>Title: <input type="text" name="title" required></label>
+    <label>Author: <input type="text" name="author" required></label>
+    <label>Pages: <input type="number" name="pages" required></label>
+    <label>Read: <input type="checkbox" name="read"></label>
+    <button type="submit">Add Book</button>
+   `
+   document.body.appendChild(form);
+
+    form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    addBookToLibrary(
+      form.author.value,
+      form.title.value,
+      form.pages.value,
+      form.read.checked
+    );
+    displayBook();
+    form.remove(); // remove the form after adding
+  }
+)})
